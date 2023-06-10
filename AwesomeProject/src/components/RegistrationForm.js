@@ -15,6 +15,7 @@ const RegistrationForm = () => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.form}>
       <TextInput
          style={styles.input}
         placeholder="Логін"
@@ -31,7 +32,8 @@ const RegistrationForm = () => {
         value={password}
         onChangeText={setPassword}
         secureTextEntry
-      />
+      /> 
+      </View>
       <Button
         style={styles.button}
         title="Зареєстуватися"
@@ -61,6 +63,9 @@ const RegistrationForm = () => {
         fontSize: 16,
         fontFamily: 'Roboto',
 
+    },
+    form:{
+      gap: 16,
     },
     button:{
         width:343,
