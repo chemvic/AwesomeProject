@@ -11,8 +11,8 @@ const AddPhotoBlock = () => {
     }
 
   return (
-    <View>
-        <View style={styles.photoContainer}>
+    <View style={styles.photoContainer}>
+        <View >
             <Image source={require('../../assets/images/Rectangle 22_small.jpg')} style={styles.image}/>
         </View>
         
@@ -24,7 +24,7 @@ const AddPhotoBlock = () => {
  };
  const styles = StyleSheet.create({
     photoContainer: {
-      flex: 1,
+    //   flex: 1,
       width: 120,
       height:120,
       backgroundColor: "#F6F6F6",

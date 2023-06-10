@@ -12,26 +12,28 @@ const RegistrationForm = () => {
     // логика куда отправлять объект данных
     console.log({name,email,password});
   };
-console.log("проверка формы");
+
   return (
     <View style={styles.container}>
       <TextInput
+         style={styles.input}
         placeholder="Логін"
         value={name}
         onChangeText={setName}
       />
-      <TextInput
+      <TextInput style={styles.input}
         placeholder="Адреса електронної пошти"
         value={email}
         onChangeText={setEmail}
       />
-      <TextInput
+      <TextInput style={styles.input}
         placeholder="Пароль"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
       />
       <Button
+        style={styles.button}
         title="Зареєстуватися"
         onPress={handleRegistration}
       />
@@ -48,12 +50,31 @@ console.log("проверка формы");
       flex: 1,
     },
     text: {
-      color: '#212121',
-      fontSize: 30,
-      lineHeight: 35.16,
-      fontWeight: 500,
-      textAlign: 'center',
+        color: '#1B4371',
+        fontSize: 16,
+        textAlign: 'center',
+      },
+    input:{
+        width:343,
+        height: 50,
+        padding: "16 16 15 16",
+        fontSize: 16,
+        fontFamily: 'Roboto',
+
     },
+    button:{
+        width:343,
+        height:51,
+        borderRadius: 100,
+        backgroundColor: '#FF6C00',
+        color: '#fff',
+        textAlign: 'center',
+        fontSize: 16,
+        fontFamily: 'Roboto',
+        padding: "16px 0",
+
+    }
+
 
 })
 export default RegistrationForm;

@@ -10,10 +10,13 @@ const RegistrationScreen = ({ navigation }) => {
         source={require('../../assets/images/BG_small.jpg')}
         style={{ width: '100%', height: '100%' }}
       >
-        <View>
+        <View style={{flex:1}}>
           <AddPhotoBlock />
           <Text style={styles.title}>Реєстрація</Text>
-          <RegistrationForm />
+          <View style={{flex:2}}>
+           <RegistrationForm/> 
+          </View>
+          
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -22,7 +25,8 @@ const RegistrationScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },

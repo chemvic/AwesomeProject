@@ -16,11 +16,12 @@ const LoginScreen=({navigation})=>{
         source={require('../../assets/images/BG_small.jpg')}
         style={{ width: '100%', height: '100%' }}
       >
-        <View>
+        <View style={{flex:1}}>
 
-          <Text style={styles.title}>Увійти</Text>  
-          <LoginForm/>
-
+          <Text style={styles.title}>Увійти</Text>
+          <View style={{flex:2}}>
+                 <LoginForm/>
+            </View>  
 
         </View>
       
