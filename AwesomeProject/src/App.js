@@ -4,14 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import { useFonts } from 'expo-font';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  Image,
-  ImageBackground,
-} from "react-native";
+
 import RegistrationScreen from './components/RegistrationScreen';
 import LoginScreen from './components/LoginScreen';
 
@@ -27,11 +20,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-       
-          <Stack.Screen name='RegistrationScreen'
-          component={RegistrationScreen}/>
-          <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        
+           <Stack.Screen name='RegistrationScreen' component={RegistrationScreen}/>
+           <Stack.Screen name="LoginScreen" component={LoginScreen} />
+         
+          
+          
+      
       </Stack.Navigator>
     </NavigationContainer>
  );

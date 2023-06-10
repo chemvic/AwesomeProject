@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TextInput, Button, TouchableOpacity  } from 'react-native';
+import { StyleSheet, View, TextInput, Button, TouchableOpacity, Text  } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const LoginForm = () => {
@@ -9,10 +9,13 @@ const LoginForm = () => {
 
   const handleLogin = () => {
     // логика куда отправлять объект данных
+    console.log({email,password});
+    setEmail('');
+    setPassword('');
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <TextInput
         placeholder="Адреса електронної пошти"
         value={email}
@@ -26,28 +29,28 @@ const LoginForm = () => {
       />
       <Button
         title="Увійти"
-        onPress={handleRegistration}
+        onPress={handleLogin}
       />
       <Text>Немає акаунту?</Text>
        <TouchableOpacity onPress={() => navigation.navigate('RegistrationScreen')}>
-        <Text> Зареєструватися</Text>
+        <Text style={styles.text}> Зареєструватися</Text>
       </TouchableOpacity>
 
     </View>
   );
+
+};
   const styles = StyleSheet.create({
     container: {
       flex: 1,
     },
-    // text: {
-    //   color: '#212121',
-    //   fontSize: 30,
-    //   lineHeight: 35.16,
-    //   fontWeight: 500,
-    //   textAlign: 'center',
-    // },
+    text: {
+      color: '#212121',
+      fontSize: 30,
+      lineHeight: 35.16,
+      fontWeight: 500,
+      textAlign: 'center',
+    },
 
 })
-};
-
 export default LoginForm;

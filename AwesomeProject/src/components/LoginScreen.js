@@ -11,34 +11,36 @@ import {
 import LoginForm from './LoginForm';
 
 const LoginScreen=({navigation})=>{
-    <View >
-    <ImageBackground source={require('../../assets/images/Photo BG_small.jpg')} resizeMode="cover" imageStyle ={styles.image}>
+    return ( <View style={styles.container}>
+    <ImageBackground
+        source={require('../../assets/images/BG_small.jpg')}
+        style={{ width: '100%', height: '100%' }}
+      >
         <View>
 
-          <Text style={styles.text}>Увійти</Text>  
+          <Text style={styles.title}>Увійти</Text>  
           <LoginForm/>
 
 
         </View>
       
     </ImageBackground>
-  </View>
+  </View>);
+
+};
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-    },
-    image: {
-      flex: 1,
       justifyContent: 'center',
+      alignItems: 'center',
     },
-    text: {
+    title: {
       color: '#212121',
       fontSize: 30,
       lineHeight: 35.16,
       fontWeight: 500,
-      textAlign: 'center',
+      fontFamily: 'Roboto',
     },
-
-})};
+  });
 export default LoginScreen;
