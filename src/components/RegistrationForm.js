@@ -62,7 +62,7 @@ const RegistrationForm = () => {
         padding: "16 16 15 16",
         fontSize: 16,
         fontFamily: 'Roboto',
-
+        borderRadius: 8,
     },
     form:{
       gap: 16,

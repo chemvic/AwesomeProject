@@ -59,7 +59,7 @@ const LoginForm = () => {
         padding: "16px 16px 15px 16px",
         fontSize: 16,
         fontFamily: 'Roboto',
-
+        borderRadius: 8,
     },
     button:{
         width:343,
