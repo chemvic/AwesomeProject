@@ -2,20 +2,26 @@ import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, Button, TouchableOpacity, Text  } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const LoginForm = () => {
+const RegistrationForm = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
 
-  const handleLogin = () => {
+  const handleRegistration = () => {
     // логика куда отправлять объект данных
-    console.log({email,password});
-    setEmail('');
-    setPassword('');
+    console.log({name,email,password});
   };
 
   return (
     <View style={styles.container}>
+      <View style={styles.form}>
+      <TextInput
+         style={styles.input}
+        placeholder="Логін"
+        value={name}
+        onChangeText={setName}
+      />
       <TextInput style={styles.input}
         placeholder="Адреса електронної пошти"
         value={email}
@@ -26,40 +32,40 @@ const LoginForm = () => {
         value={password}
         onChangeText={setPassword}
         secureTextEntry
-      />
-      <Button 
+      /> 
+      </View>
+      <Button
         style={styles.button}
-        title="Увійти"
-        onPress={handleLogin}
+        title="Зареєстуватися"
+        onPress={handleRegistration}
       />
-      <Text style={styles.text}>Немає акаунту?</Text>
-       <TouchableOpacity onPress={() => navigation.navigate('RegistrationScreen')}>
-        <Text style={[styles.text, styles.underline]}> Зареєструватися</Text>
+       <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
+        <Text style={styles.text}>Вже є акаунт? Увійти</Text>
       </TouchableOpacity>
 
     </View>
   );
-
+ 
 };
-  const styles = StyleSheet.create({
+ const styles = StyleSheet.create({
     container: {
       flex: 1,
     },
     text: {
-      color: '#1B4371',
-      fontSize: 16,
-      textAlign: 'center',
-    },
-    underline:{
-        textDecorationLine: 'underline',
-    },
+        color: '#1B4371',
+        fontSize: 16,
+        textAlign: 'center',
+      },
     input:{
         width:343,
         height: 50,
-        padding: "16px 16px 15px 16px",
+        // padding: "16 16 15 16",
         fontSize: 16,
         fontFamily: 'Roboto',
         borderRadius: 8,
+    },
+    form:{
+      gap: 16,
     },
     button:{
         width:343,
@@ -70,9 +76,10 @@ const LoginForm = () => {
         textAlign: 'center',
         fontSize: 16,
         fontFamily: 'Roboto',
-        padding: "16px 0",
+        // padding: "16px 0",
 
     }
 
+
 })
-export default LoginForm;
+export default RegistrationForm;
