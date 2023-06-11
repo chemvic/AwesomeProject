@@ -14,6 +14,7 @@ const RegistrationForm = () => {
     setName ('');
     setEmail('');
     setPassword('');
+    navigation.navigate('Home');
   };
 
   return (

@@ -1,11 +1,15 @@
 import React from "react";
-import { StyleSheet,TouchableWithoutFeedback, Keyboard,  Text, View,SafeAreaView , ImageBackground } from "react-native";
+import { StyleSheet,TouchableWithoutFeedback, Keyboard,  Text, View,SafeAreaView , ImageBackground, KeyboardAvoidingView, Platform  } from "react-native";
 import RegistrationForm from './RegistrationForm';
 import AddPhotoBlock from "./AddPhotoBlock";
 
 const RegistrationScreen = ({ navigation }) => {
   return (
-    <View  style={styles.container}> 
+     
+     <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 <View>
       <ImageBackground
@@ -28,7 +32,8 @@ const RegistrationScreen = ({ navigation }) => {
       </ImageBackground>
       </View>
       </TouchableWithoutFeedback>
-    </View>
+      </KeyboardAvoidingView>
+    
   );
 };
 
