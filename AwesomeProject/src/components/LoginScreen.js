@@ -6,12 +6,16 @@ import {
   Text,
   View,
   ImageBackground,
+  TouchableWithoutFeedback,
+   Keyboard, 
 } from "react-native";
 
 import LoginForm from './LoginForm';
 
 const LoginScreen=({navigation})=>{
-    return ( <View style={styles.container}>
+    return (   <View style={styles.container}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+  <View>
     <ImageBackground
         source={require('../../assets/images/BG_small.jpg')}
         style={{ width: '100%', height: '100%' }}
@@ -28,7 +32,10 @@ const LoginScreen=({navigation})=>{
         </View>
       
     </ImageBackground>
+ </View>
+  </TouchableWithoutFeedback> 
   </View>);
+  
 
 };
 
