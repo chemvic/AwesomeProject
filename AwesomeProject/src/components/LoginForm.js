@@ -32,13 +32,14 @@ const LoginForm = () => {
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
   <Text style={styles.buttonText}>Увійти</Text>
 </TouchableOpacity>
-      
-       <TouchableOpacity onPress={() => navigation.navigate('RegistrationScreen')}>
        <View style={styles.textContainer}>
-        <Text style={styles.text}>Немає акаунту?  </Text><Text style={[styles.text, styles.underline]}>Зареєструватися</Text>
-      </View>
+        <Text style={styles.text}>Немає акаунту?  </Text>
+       <TouchableOpacity onPress={() => navigation.navigate('RegistrationScreen')}>
+      
+        <Text style={[styles.text, styles.underline]}>Зареєструватися</Text>
+     
       </TouchableOpacity>
-
+ </View>
     </View>
   );
 
