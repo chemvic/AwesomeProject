@@ -7,7 +7,8 @@ const AddPhotoBlock = () => {
 
     const handleAddPhoto=()=>{
         //добавить фото
-        console.log("Добавление фото");
+        // console.log("Добавление фото");
+        console.debug('Welcome!');
     }
 
   return (
@@ -24,7 +25,6 @@ const AddPhotoBlock = () => {
  };
  const styles = StyleSheet.create({
     photoContainer: {
-    //   flex: 1,
       width: 120,
       height:120,
       backgroundColor: "#F6F6F6",

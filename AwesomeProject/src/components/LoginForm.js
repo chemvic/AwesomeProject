@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TextInput, Button, TouchableOpacity, Text  } from 'react-native';
+import { StyleSheet, View, TextInput, TouchableOpacity, Text  } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const LoginForm = () => {
@@ -16,6 +16,7 @@ const LoginForm = () => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.form}>
       <TextInput style={styles.input}
         placeholder="Адреса електронної пошти"
         value={email}
@@ -27,14 +28,15 @@ const LoginForm = () => {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Button 
-        style={styles.button}
-        title="Увійти"
-        onPress={handleLogin}
-      />
-      <Text style={styles.text}>Немає акаунту?</Text>
+      </View>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+  <Text style={styles.buttonText}>Увійти</Text>
+</TouchableOpacity>
+      
        <TouchableOpacity onPress={() => navigation.navigate('RegistrationScreen')}>
-        <Text style={[styles.text, styles.underline]}> Зареєструватися</Text>
+       <View style={styles.textContainer}>
+        <Text style={styles.text}>Немає акаунту?  </Text><Text style={[styles.text, styles.underline]}>Зареєструватися</Text>
+      </View>
       </TouchableOpacity>
 
     </View>
@@ -53,26 +55,40 @@ const LoginForm = () => {
     underline:{
         textDecorationLine: 'underline',
     },
-    input:{
-        width:343,
-        height: 50,
-        // padding: "16px 16px 15px 16px",
-        fontSize: 16,
-        fontFamily: 'Roboto',
-        borderRadius: 8,
+    textContainer: {
+      flexDirection: 'row',
+      justifyContent: 'center',      
     },
-    button:{
-        width:343,
-        height:51,
-        borderRadius: 100,
-        backgroundColor: '#FF6C00',
-        color: '#fff',
-        textAlign: 'center',
-        fontSize: 16,
-        fontFamily: 'Roboto',
-        // padding: "16px 0",
-
-    }
+    input:{
+      width:343,
+      height: 50,
+      padding: 16,
+      fontSize: 16,
+      fontFamily: 'Roboto',
+      borderRadius: 8,
+      backgroundColor: '#E8E8E8',
+    
+  },
+  form:{
+    gap: 16,
+    marginBottom:43
+    
+  },
+  button: {
+    width: 343,
+    height: 51,
+    borderRadius: 100,
+    backgroundColor: '#FF6C00',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:16,
+  },
+  buttonText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 16,
+    fontFamily: 'Roboto',
+  },
 
 })
 export default LoginForm;
